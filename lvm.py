@@ -73,9 +73,10 @@ def lvmremote():
 		os.system(f"sshpass -p {ps} ssh {ip} lvs")
 	elif ch==14:
 		break
-  else:
-    print('doesn't support")
+  	else:
+    		print('doesn't support")
 def lvmlocal():
+    while True:	    
    
 	print(''' press 1: to show hard disks
 	press 2: to create physical volume
@@ -146,5 +147,5 @@ def lvmlocal():
 		os.system("lvs")
 	elif ch==14:
 		break
-  else:
-    print('doesn't support")
+  	else:
+    		print('doesn't support")
