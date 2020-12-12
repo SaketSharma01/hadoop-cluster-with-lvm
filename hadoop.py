@@ -20,6 +20,7 @@ def hadoop():
 		if choice1==1:
 			nameIP=input("Enter the IP: ")
 			pss=getpass.getpass(f"Enter {nameIP}'s password: ")
+			os.system(f"sshpass -p {pss} ssh {nameIP} systemctl stop firewalld")
 			subprocess.getoutput(f"sshpass -p {pss} scp /root/hadoop-1.2.1-1.x86_64.rpm /root/jdk-8u171-linux-x64.rpm  {nameIP}:/root") 
 			subprocess.getoutput(f'sshpass -p {pss} ssh {nameIP} "rpm -ivh hadoop-1.2.1-1.x86_64.rpm --force; rpm -ivh jdk-8u171-linux-x64.rpm"')
 			os.system(f"sshpass -p {pss} scp /root/temp/hdfs-site.xml {nameIP}:/etc/hadoop/hdfs-site.xml ; scp /temp/core-site.xml {nameIP}:/etc/hadoop/core-site.xml ")
@@ -29,6 +30,7 @@ def hadoop():
 		elif choice1==2:
 			subprocess.getoutput("rpm -ivh hadoop-1.2.1-1.x86_64.rpm --force; rpm -ivh jdk-8u171-linux-x64.rpm")
 			subprocess.getoutput("mkdir /NN")
+			os.system("systemctl stop firewalld")
 			os.system("cp /root/hdfs-site.xml /etc/hadoop/hdfs-site.xml ; cp /root/core-site.xml /etc/hadoop/core-site.xml ")
 			os.system(" hadoop namenode -format")
 			os.system("hadoop-daemon.sh start namenode ")
@@ -54,6 +56,7 @@ def hadoop():
 		for i in range(n):
 			ip=dataIP[i]
 			p=dataPass[i]
+			os.system(f"sshpass -p {p} ssh {ip} systemctl stop firewalld")
 			subprocess.getouput(f"sshpass -p {p} /root/hadoop-1.2.1-1.x86_64.rpm /root/jdk-8u171-linux-x64.rpm  {ip}:/root") 
 			subprocess.getouput(f'sshpass -p {p} ssh {ip} "rpm -ivh hadoop-1.2.1-1.x86_64.rpm --force: rpm -ivh jdk-8u171-linux-x64.rpm"')
 			os.system(f"sshpass -p {p} scp /root/temp/core-site.xml  {ip}:/etc/hadoop/core-site.xml")
