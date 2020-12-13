@@ -22,7 +22,8 @@ def lvmremote():
 	press 12: Reduce the logical volume
 	press 13: Show the logical volumes
 	press 14: exit''')
-	ch=int(input("Enter ur choice: "))
+	os.system("tput setaf 3")
+        ch=int(input("Enter ur choice: "))
 	if ch==1:
 		os.system(f"sshpass -p {ps} ssh {ip} fdisk -l")
 	elif ch==2:
@@ -98,7 +99,8 @@ def lvmlocal():
 	press 12: Reduce the logical volume
 	press 13: Show the logical volumes
 	press 14: exit''')
-	ch=int(input("Enter ur choice: "))
+	os.system("tput setaf 3")
+        ch=int(input("Enter ur choice: "))
 	if ch==1:
 		os.system("fdisk -l")
 	elif ch==2:
