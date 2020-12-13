@@ -22,5 +22,6 @@ try:
      print("Doesn't support")
 except ValueError:
   print("Please enter correct input")
+finally:
   os.system("tput setaf 7")
    
