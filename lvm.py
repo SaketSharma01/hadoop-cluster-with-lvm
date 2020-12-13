@@ -4,7 +4,11 @@ def lvmremote():
     ip=input("Enter the required ip address: ")
     ps=getpass.getpass(f"Enter {ip}'s password: ")
     while True:
-	print(''' \tpress 1: to show hard disks
+        os.system("tput setaf 2")
+        input('Press Enter to continue...')
+        os.system(" clear")
+	
+        print(''' \tpress 1: to show hard disks
 	press 2: to create physical volume
 	press 3: to display physical volume
 	press 4: to create volume group
@@ -76,8 +80,10 @@ def lvmremote():
   	else:
     		print('doesn't support")
 def lvmlocal():
-    while True:	    
-   
+    while True:	
+        os.system("tput setaf 2")    
+        input('Press Enter to continue...')
+        os.system("clear")
 	print(''' press 1: to show hard disks
 	press 2: to create physical volume
 	press 3: to display physical volume
