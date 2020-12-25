@@ -58,7 +58,7 @@ def hadoop():
 			p=dataPass[i]
 			os.system(f"sshpass -p {p} ssh {ip} systemctl stop firewalld")
 			subprocess.getouput(f"sshpass -p {p} /root/hadoop-1.2.1-1.x86_64.rpm /root/jdk-8u171-linux-x64.rpm  {ip}:/root") 
-			subprocess.getouput(f'sshpass -p {p} ssh {ip} "rpm -ivh hadoop-1.2.1-1.x86_64.rpm --force: rpm -ivh jdk-8u171-linux-x64.rpm"')
+			subprocess.getouput(f'sshpass -p {p} ssh {ip} "rpm -ivh hadoop-1.2.1-1.x86_64.rpm --force; rpm -ivh jdk-8u171-linux-x64.rpm"')
 			os.system(f"sshpass -p {p} scp /root/temp/core-site.xml  {ip}:/etc/hadoop/core-site.xml")
 			os.system(f"sshpass -p {p} scp /root/temp/hdfs-site.xml  {ip}:/etc/hadoop/hdfs-site.xml")
 			subprocess.getoutput(f"sshpass -p {p} ssh {ip} mkdir /data")
@@ -87,7 +87,7 @@ def hadoop():
 			ip=dataIP[i]
 			p=dataPass[i]
 			subprocess.getouput(f"sshpass -p {p} /root/hadoop-1.2.1-1.x86_64.rpm /root/jdk-8u171-linux-x64.rpm  {ip}:/root") 
-			subprocess.getouput(f'sshpass -p {p} ssh {ip} "rpm -ivh hadoop-1.2.1-1.x86_64.rpm --force: rpm -ivh jdk-8u171-linux-x64.rpm"')
+			subprocess.getouput(f'sshpass -p {p} ssh {ip} "rpm -ivh hadoop-1.2.1-1.x86_64.rpm --force; rpm -ivh jdk-8u171-linux-x64.rpm"')
 			os.system(f"sshpass -p {p} scp /root/temp/core-site.xml  {ip}:/etc/hadoop/core-site.xml")
 			os.system(f"sshpass -p {p} scp /root/temp/hdfs-site.xml  {ip}:/etc/hadoop/hdfs-site.xml")
 			
