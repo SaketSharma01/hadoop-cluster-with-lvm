@@ -8,7 +8,8 @@ def lvmremote():
 		input('Press Enter to continue...')
 		os.system(" clear")
 	
-		print(''' \tpress 1: to show hard disks
+		print(''' 
+		press 1: to show hard disks
 		press 2: to create physical volume
 		press 3: to display physical volume
 		press 4: to create volume group
@@ -79,7 +80,7 @@ def lvmremote():
 		elif ch==14:
 			break
 		else:
-			print('doesn't support")
+			print("doesn't support")
 def lvmlocal():
 	while True:
 		os.system("tput setaf 2")    
@@ -156,4 +157,4 @@ def lvmlocal():
 		elif ch==14:
 			break
 		else:
-			print('doesn't support")
+			print("doesn't support")
