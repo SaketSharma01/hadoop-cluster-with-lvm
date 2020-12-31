@@ -2,7 +2,7 @@ import os
 import lvm
 import hadoop
 os.system("tput setaf 3")
-print(\t"************************************************")
+print("\t************************************************")
 print(" \t\tPress 1: To setup hadoop \n\t\t Press 2: To setup lvm")
 try:
   ch=int(input("Enter ur choice :"))
@@ -10,7 +10,7 @@ try:
     while True:
       hadoop.hadoop()
   elif ch==2:
-     print("\t\tPress 1:For remotr setup \n\t\tPress 2: For local setup
+     print("\t\tPress 1:For remotr setup \n\t\tPress 2: For local setup")
      ch1=int(input("Enter ur choice :"))
      if ch1==1:
        lvm.lvmremote()
