@@ -86,7 +86,8 @@ def lvmlocal():
 		os.system("tput setaf 2")    
 		input('Press Enter to continue...')
 		os.system("clear")
-		print(''' press 1: to show hard disks
+		print(''' 
+		press 1: to show hard disks
 		press 2: to create physical volume
 		press 3: to display physical volume
 		press 4: to create volume group
